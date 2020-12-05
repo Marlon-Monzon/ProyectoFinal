@@ -103,6 +103,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Login v = new Login();
         v.setVisible(true);
         this.setVisible(false);
+       
     }//GEN-LAST:event_jButton4MouseClicked
 
     /**
