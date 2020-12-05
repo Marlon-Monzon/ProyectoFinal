@@ -3,8 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package Interfaces;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 /**
  *
  * @author DyMGaming
@@ -16,8 +22,15 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        iconoEnBD();
     }
-
+    public void iconoEnBD(){      
+        URL url = getClass().getResource("/Imagenes/Logo2.png"); 
+        ImageIcon icono = new ImageIcon(url);  
+        setIconImage(icono.getImage()); 
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,96 +41,76 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField2 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
         Iniciar_sesion = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        JUser = new javax.swing.JTextField();
+        JPassword = new javax.swing.JTextField();
+        Crear = new javax.swing.JLabel();
+        JTextUser = new javax.swing.JLabel();
+        JTextPasword = new javax.swing.JLabel();
+        Salir = new javax.swing.JButton();
+        Icono = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
         jTextField2.setText("Usuario");
         jTextField2.setUI(null);
         jTextField2.setActionCommand("<Not Set>");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Iniciar_sesion.setBackground(new java.awt.Color(0, 0, 102));
+        Iniciar_sesion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        Iniciar_sesion.setForeground(new java.awt.Color(255, 255, 255));
         Iniciar_sesion.setText("Iniciar Sesion");
         Iniciar_sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Iniciar_sesionActionPerformed(evt);
             }
         });
+        getContentPane().add(Iniciar_sesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 230, 110, -1));
 
-        jLabel1.setText("Usuario");
+        JUser.setBackground(new java.awt.Color(0, 0, 102));
+        JUser.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(JUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 110, -1));
 
-        jLabel2.setText("Contraseña");
+        JPassword.setBackground(new java.awt.Color(0, 0, 102));
+        JPassword.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(JPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
 
-        jLabel3.setText("Crear Cuenta");
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Crear.setForeground(new java.awt.Color(255, 255, 255));
+        Crear.setText("Crear Cuenta");
+        Crear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                CrearMouseClicked(evt);
             }
         });
+        getContentPane().add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 270, 80, -1));
 
-        jLabel4.setText("jLabel4");
+        JTextUser.setForeground(new java.awt.Color(255, 255, 255));
+        JTextUser.setText("Usuario");
+        getContentPane().add(JTextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, 20));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(160, 160, 160))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 83, Short.MAX_VALUE)
-                        .addComponent(jLabel2)))
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Iniciar_sesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                        .addComponent(jTextField1)))
-                .addGap(146, 146, 146))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 79, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(Iniciar_sesion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3)
-                .addGap(55, 55, 55))
-        );
+        JTextPasword.setForeground(new java.awt.Color(255, 255, 255));
+        JTextPasword.setText("Contraseña");
+        getContentPane().add(JTextPasword, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, -1, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        Salir.setBackground(new java.awt.Color(0, 0, 102));
+        Salir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Salir.setForeground(new java.awt.Color(255, 255, 255));
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
+
+        Icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo2.png"))); // NOI18N
+        getContentPane().add(Icono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OIP (1).jpg"))); // NOI18N
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -126,9 +119,15 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Iniciar_sesionActionPerformed
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel3MouseClicked
+    private void CrearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearMouseClicked
+        Registro v = new Registro();
+        v.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_CrearMouseClicked
+
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,14 +165,15 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Crear;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel Icono;
     private javax.swing.JButton Iniciar_sesion;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField JPassword;
+    private javax.swing.JLabel JTextPasword;
+    private javax.swing.JLabel JTextUser;
+    private javax.swing.JTextField JUser;
+    private javax.swing.JButton Salir;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
