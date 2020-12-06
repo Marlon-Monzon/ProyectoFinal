@@ -19,9 +19,13 @@ public class Registro extends javax.swing.JFrame {
      */
     public Registro() {
         initComponents();
-       // iconoEnBD();
+        iconoEnBD();
     }
-
+    public void iconoEnBD(){      
+        URL url = getClass().getResource("/Imagenes/Logo2.png"); 
+        ImageIcon icono = new ImageIcon(url);  
+        setIconImage(icono.getImage()); 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
