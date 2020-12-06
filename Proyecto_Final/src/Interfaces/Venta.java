@@ -42,6 +42,7 @@ public class Venta extends javax.swing.JFrame {
         Salir = new javax.swing.JButton();
         JBuscar = new javax.swing.JTextField();
         JEjemplo = new javax.swing.JLabel();
+        Buscar1 = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -61,7 +62,7 @@ public class Venta extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(TMedicamentos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 450, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 450, 100));
 
         Return.setBackground(new java.awt.Color(0, 0, 102));
         Return.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -77,13 +78,13 @@ public class Venta extends javax.swing.JFrame {
         Buscar.setBackground(new java.awt.Color(0, 0, 102));
         Buscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Buscar.setForeground(new java.awt.Color(255, 255, 255));
-        Buscar.setText("Buscar");
+        Buscar.setText("Vender");
         Buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, 30));
+        getContentPane().add(Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, -1, 30));
 
         Salir.setBackground(new java.awt.Color(0, 0, 102));
         Salir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -101,6 +102,17 @@ public class Venta extends javax.swing.JFrame {
         JEjemplo.setForeground(new java.awt.Color(255, 255, 255));
         JEjemplo.setText("Ingrese nombre o caracteristica del medicamento a buscar");
         getContentPane().add(JEjemplo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+
+        Buscar1.setBackground(new java.awt.Color(0, 0, 102));
+        Buscar1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        Buscar1.setForeground(new java.awt.Color(255, 255, 255));
+        Buscar1.setText("Buscar");
+        Buscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Buscar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, 30));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OIP (1).jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
@@ -122,6 +134,10 @@ public class Venta extends javax.swing.JFrame {
         v.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ReturnActionPerformed
+
+    private void Buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Buscar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Buscar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,6 +177,7 @@ public class Venta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;
+    private javax.swing.JButton Buscar1;
     private javax.swing.JLabel Fondo;
     private javax.swing.JTextField JBuscar;
     private javax.swing.JLabel JEjemplo;

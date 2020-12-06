@@ -35,95 +35,117 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        Welcome = new javax.swing.JLabel();
+        Almacen = new javax.swing.JButton();
+        Compra = new javax.swing.JButton();
+        Venta = new javax.swing.JButton();
+        Logo = new javax.swing.JLabel();
+        CSesion = new javax.swing.JButton();
+        Salir = new javax.swing.JButton();
+        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Bienvenido Usuario");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        Welcome.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        Welcome.setForeground(new java.awt.Color(255, 255, 255));
+        Welcome.setText("Bienvenido Usuario");
+        getContentPane().add(Welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 102));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Almacen");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Almacen.setBackground(new java.awt.Color(0, 0, 102));
+        Almacen.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Almacen.setForeground(new java.awt.Color(255, 255, 255));
+        Almacen.setText("Almacen");
+        Almacen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                AlmacenActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        getContentPane().add(Almacen, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 102));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Compra");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
-
-        jButton3.setBackground(new java.awt.Color(0, 0, 102));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Venta");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, -1, -1));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo2.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
-
-        jButton4.setBackground(new java.awt.Color(0, 0, 102));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Cerrar sesion");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        Compra.setBackground(new java.awt.Color(0, 0, 102));
+        Compra.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Compra.setForeground(new java.awt.Color(255, 255, 255));
+        Compra.setText("Compra");
+        Compra.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
+                CompraMouseClicked(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+        getContentPane().add(Compra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, -1, -1));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 102));
-        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Salir");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        Venta.setBackground(new java.awt.Color(0, 0, 102));
+        Venta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Venta.setForeground(new java.awt.Color(255, 255, 255));
+        Venta.setText("Venta");
+        Venta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VentaMouseClicked(evt);
+            }
+        });
+        getContentPane().add(Venta, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, -1, -1));
+
+        Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo2.png"))); // NOI18N
+        getContentPane().add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
+
+        CSesion.setBackground(new java.awt.Color(0, 0, 102));
+        CSesion.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        CSesion.setForeground(new java.awt.Color(255, 255, 255));
+        CSesion.setText("Cerrar sesion");
+        CSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CSesionMouseClicked(evt);
+            }
+        });
+        getContentPane().add(CSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+
+        Salir.setBackground(new java.awt.Color(0, 0, 102));
+        Salir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        Salir.setForeground(new java.awt.Color(255, 255, 255));
+        Salir.setText("Salir");
+        Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                SalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, -1));
+        getContentPane().add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OIP (1).jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OIP (1).jpg"))); // NOI18N
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_SalirActionPerformed
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+    private void CSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CSesionMouseClicked
         Login v = new Login();
         v.setVisible(true);
         this.setVisible(false);
        
-    }//GEN-LAST:event_jButton4MouseClicked
+    }//GEN-LAST:event_CSesionMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void AlmacenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlmacenActionPerformed
        Almacen v = new Almacen();
        v.setVisible(true);
        this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_AlmacenActionPerformed
+
+    private void CompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CompraMouseClicked
+       Compra v = new Compra();
+       v.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_CompraMouseClicked
+
+    private void VentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VentaMouseClicked
+        Venta v = new Venta();
+       v.setVisible(true);
+       this.setVisible(false);
+    }//GEN-LAST:event_VentaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -161,13 +183,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton Almacen;
+    private javax.swing.JButton CSesion;
+    private javax.swing.JButton Compra;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel Logo;
+    private javax.swing.JButton Salir;
+    private javax.swing.JButton Venta;
+    private javax.swing.JLabel Welcome;
     // End of variables declaration//GEN-END:variables
 }

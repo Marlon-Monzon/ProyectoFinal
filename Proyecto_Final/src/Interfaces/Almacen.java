@@ -56,12 +56,12 @@ public class Almacen extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Medicamento", "Gramos", "Enfermedad", "Via", "Receta", "Stock"
+                "Medicamento", "Gramos", "Precio", "Via", "Receta", "Stock"
             }
         ));
         jScrollPane1.setViewportView(TMedicamentos);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 450, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 450, 100));
 
         Return.setBackground(new java.awt.Color(0, 0, 102));
         Return.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

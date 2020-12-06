@@ -35,33 +35,28 @@ public class Compra extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        TMedicamentos = new javax.swing.JTable();
         Return = new javax.swing.JButton();
         Buscar = new javax.swing.JButton();
         Salir = new javax.swing.JButton();
-        JBuscar = new javax.swing.JTextField();
+        JBuscar1 = new javax.swing.JTextField();
         JEjemplo = new javax.swing.JLabel();
+        JBuscar2 = new javax.swing.JTextField();
+        JBuscar3 = new javax.swing.JTextField();
+        JBuscar4 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TMedicamentos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
-            },
-            new String [] {
-                "Medicamento", "Gramos", "Enfermedad", "Via", "Receta", "Stock"
-            }
-        ));
-        jScrollPane1.setViewportView(TMedicamentos);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 450, 150));
 
         Return.setBackground(new java.awt.Color(0, 0, 102));
         Return.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -77,13 +72,13 @@ public class Compra extends javax.swing.JFrame {
         Buscar.setBackground(new java.awt.Color(0, 0, 102));
         Buscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Buscar.setForeground(new java.awt.Color(255, 255, 255));
-        Buscar.setText("Buscar");
+        Buscar.setText("Registrar");
         Buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, -1, 30));
+        getContentPane().add(Buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, -1, 30));
 
         Salir.setBackground(new java.awt.Color(0, 0, 102));
         Salir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -95,12 +90,60 @@ public class Compra extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
-        getContentPane().add(JBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 170, 30));
+        getContentPane().add(JBuscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 170, 30));
 
         JEjemplo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         JEjemplo.setForeground(new java.awt.Color(255, 255, 255));
-        JEjemplo.setText("Ingrese nombre o caracteristica del medicamento a buscar");
-        getContentPane().add(JEjemplo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+        JEjemplo.setText("Compra de medicamentos ingrese los datos correspondientes");
+        getContentPane().add(JEjemplo, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 380, -1));
+        getContentPane().add(JBuscar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 170, 30));
+        getContentPane().add(JBuscar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 170, 30));
+        getContentPane().add(JBuscar4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 170, 30));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Precio");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 170, 20));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Requiere Receta");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 170, 20));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Gramos");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 170, 20));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Via de administracion");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 170, 20));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Cantidad de compra");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 170, 20));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Nombre del medicamento");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 170, 20));
+
+        jComboBox1.setBackground(new java.awt.Color(0, 0, 102));
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Si", "No", " " }));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 170, 30));
+
+        jComboBox2.setBackground(new java.awt.Color(0, 0, 102));
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jComboBox2.setForeground(new java.awt.Color(255, 255, 255));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oral", "Sublingual", "Topica", "Parental", "Respiratoria", "Rectal", "Vaginal", " " }));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 170, 30));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo2.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OIP (1).jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
@@ -162,11 +205,21 @@ public class Compra extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Buscar;
     private javax.swing.JLabel Fondo;
-    private javax.swing.JTextField JBuscar;
+    private javax.swing.JTextField JBuscar1;
+    private javax.swing.JTextField JBuscar2;
+    private javax.swing.JTextField JBuscar3;
+    private javax.swing.JTextField JBuscar4;
     private javax.swing.JLabel JEjemplo;
     private javax.swing.JButton Return;
     private javax.swing.JButton Salir;
-    private javax.swing.JTable TMedicamentos;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
