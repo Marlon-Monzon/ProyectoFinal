@@ -191,8 +191,8 @@ public class Compra extends javax.swing.JFrame {
              cs.setString(1, this.JNombre.getText());
              cs.setInt(2, Integer.parseInt((String)this.JGramos.getText()));
              cs.setInt(3, Integer.parseInt((String)this.JPrecio.getText()));
-             cs.setString(4, (String) this.JVia.getSelectedItem());
-             cs.setString(5, (String) this.JReceta.getSelectedItem());
+             cs.setString(4,(String) this.JVia.getSelectedItem());
+             cs.setString(5,(String) this.JReceta.getSelectedItem());
              cs.setInt(6, Integer.parseInt((String)this.JAlmacen.getText()));
              cs.setInt(7, Integer.parseInt((String)this.JTrabajadores.getSelectedItem()));
              if (cs.execute()) {
