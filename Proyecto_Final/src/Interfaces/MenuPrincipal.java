@@ -7,6 +7,7 @@ package Interfaces;
 
 import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -98,6 +99,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 CSesionMouseClicked(evt);
             }
         });
+        CSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CSesionActionPerformed(evt);
+            }
+        });
         getContentPane().add(CSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
 
         Salir.setBackground(new java.awt.Color(0, 0, 102));
@@ -126,7 +132,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         Login v = new Login();
         v.setVisible(true);
         this.setVisible(false);
-       
+        JOptionPane.showMessageDialog(null, "Sesion Cerrada Correctamente", "Cerrar Sesion",JOptionPane.CANCEL_OPTION);
     }//GEN-LAST:event_CSesionMouseClicked
 
     private void AlmacenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlmacenActionPerformed
@@ -146,6 +152,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
        v.setVisible(true);
        this.setVisible(false);
     }//GEN-LAST:event_VentaMouseClicked
+
+    private void CSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CSesionActionPerformed
 
     /**
      * @param args the command line arguments
