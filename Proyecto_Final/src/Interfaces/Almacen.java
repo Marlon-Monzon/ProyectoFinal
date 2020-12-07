@@ -8,24 +8,51 @@ package Interfaces;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
+import java.util.Vector;
 
 /**
  *
  * @author DyMGaming
  */
 public class Almacen extends javax.swing.JFrame {
-
+    ResultSet rs;
     /**
      * Creates new form Almacen
      */
     public Almacen() {
         initComponents();
         iconoEnBD();
+        tablaMedicamentos();
     }
     public void iconoEnBD(){      
         URL url = getClass().getResource("/Imagenes/Logo2.png"); 
         ImageIcon icono = new ImageIcon(url);  
         setIconImage(icono.getImage()); 
+    }
+    
+    public void tablaMedicamentos() {
+        DefaultTableModel modelo = (DefaultTableModel) TMedicamentos.getModel();
+        modelo.setRowCount(0);
+        
+        rs = ConexionSQL.Conexion.Consulta("SELECT * FROM mostrarmedicamentos");
+        try {
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString(1));
+                v.add(rs.getInt(2));
+                v.add(rs.getInt(3));
+                v.add(rs.getString(4));
+                v.add(rs.getString(5));
+                v.add(rs.getInt(6));
+                modelo.addRow(v);
+                TMedicamentos.setModel(modelo);
+            }
+        } catch (Exception e) {
+            
+        }
+      
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -59,7 +86,22 @@ public class Almacen extends javax.swing.JFrame {
             new String [] {
                 "Medicamento", "Gramos", "Precio", "Via", "Receta", "Stock"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TMedicamentos);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 450, 100));

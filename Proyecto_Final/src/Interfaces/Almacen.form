@@ -42,12 +42,12 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="4">
-                <Column editable="true" title="Medicamento" type="java.lang.Object"/>
-                <Column editable="true" title="Gramos" type="java.lang.Object"/>
-                <Column editable="true" title="Precio" type="java.lang.Object"/>
-                <Column editable="true" title="Via" type="java.lang.Object"/>
-                <Column editable="true" title="Receta" type="java.lang.Object"/>
-                <Column editable="true" title="Stock" type="java.lang.Object"/>
+                <Column editable="false" title="Medicamento" type="java.lang.String"/>
+                <Column editable="false" title="Gramos" type="java.lang.Integer"/>
+                <Column editable="false" title="Precio" type="java.lang.Integer"/>
+                <Column editable="false" title="Via" type="java.lang.String"/>
+                <Column editable="false" title="Receta" type="java.lang.String"/>
+                <Column editable="false" title="Stock" type="java.lang.Integer"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
