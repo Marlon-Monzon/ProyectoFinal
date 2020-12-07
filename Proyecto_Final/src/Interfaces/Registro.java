@@ -45,6 +45,8 @@ public class Registro extends javax.swing.JFrame {
         TAM = new javax.swing.JTextField();
         TPassword = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        ConfirmarContraseña = new javax.swing.JLabel();
+        TConfirmarContraseña = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,17 +61,17 @@ public class Registro extends javax.swing.JFrame {
         Ap.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Ap.setForeground(new java.awt.Color(255, 255, 255));
         Ap.setText("Apellido paterno");
-        getContentPane().add(Ap, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+        getContentPane().add(Ap, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
         Am.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Am.setForeground(new java.awt.Color(255, 255, 255));
         Am.setText("Apellido materno");
-        getContentPane().add(Am, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        getContentPane().add(Am, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         Password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Password.setForeground(new java.awt.Color(255, 255, 255));
-        Password.setText("Contraseña");
-        getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
+        Password.setText("Confirmar Contraseña");
+        getContentPane().add(Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 140, 20));
 
         Registrar.setBackground(new java.awt.Color(0, 0, 102));
         Registrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -84,19 +86,19 @@ public class Registro extends javax.swing.JFrame {
 
         TNombre.setBackground(new java.awt.Color(0, 0, 102));
         TNombre.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(TNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, 140, -1));
+        getContentPane().add(TNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 140, -1));
 
         TAP.setBackground(new java.awt.Color(0, 0, 102));
         TAP.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(TAP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 140, -1));
+        getContentPane().add(TAP, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 140, -1));
 
         TAM.setBackground(new java.awt.Color(0, 0, 102));
         TAM.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(TAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 140, -1));
+        getContentPane().add(TAM, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 120, 140, -1));
 
         TPassword.setBackground(new java.awt.Color(0, 0, 102));
         TPassword.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(TPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 140, -1));
+        getContentPane().add(TPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 140, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 102));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -108,6 +110,15 @@ public class Registro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+
+        ConfirmarContraseña.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ConfirmarContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        ConfirmarContraseña.setText("Contraseña");
+        getContentPane().add(ConfirmarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+
+        TConfirmarContraseña.setBackground(new java.awt.Color(0, 0, 102));
+        TConfirmarContraseña.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(TConfirmarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OIP (1).jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(400, 320));
@@ -166,10 +177,12 @@ public class Registro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Am;
     private javax.swing.JLabel Ap;
+    private javax.swing.JLabel ConfirmarContraseña;
     private javax.swing.JLabel Password;
     private javax.swing.JButton Registrar;
     private javax.swing.JTextField TAM;
     private javax.swing.JTextField TAP;
+    private javax.swing.JTextField TConfirmarContraseña;
     private javax.swing.JTextField TNombre;
     private javax.swing.JTextField TPassword;
     private javax.swing.JButton jButton1;
