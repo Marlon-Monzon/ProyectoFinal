@@ -125,7 +125,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
+        JOptionPane.showMessageDialog(null, "Cierre de sesion automatico activado", "Cerrar Aplicacion",JOptionPane.CANCEL_OPTION);
         System.exit(0);
+        
     }//GEN-LAST:event_SalirActionPerformed
 
     private void CSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CSesionMouseClicked

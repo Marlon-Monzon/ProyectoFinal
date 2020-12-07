@@ -7,6 +7,8 @@ package Interfaces;
 
 import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -50,7 +52,7 @@ public class Venta extends javax.swing.JFrame {
 
         TMedicamentos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
+                {"Paracetamol", "500", "150", "oral", "no", "50"},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
@@ -59,6 +61,11 @@ public class Venta extends javax.swing.JFrame {
                 "Medicamento", "Gramos", "Enfermedad", "Via", "Receta", "Stock"
             }
         ));
+        TMedicamentos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TMedicamentosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TMedicamentos);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 450, 220));
@@ -78,6 +85,11 @@ public class Venta extends javax.swing.JFrame {
         Salir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Salir.setForeground(new java.awt.Color(255, 255, 255));
         Salir.setText("Salir");
+        Salir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SalirMouseClicked(evt);
+            }
+        });
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SalirActionPerformed(evt);
@@ -110,7 +122,8 @@ public class Venta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-      System.exit(0);
+      JOptionPane.showMessageDialog(null, "Cierre de sesion automatico activado", "Cerrar Aplicacion",JOptionPane.CANCEL_OPTION);
+        System.exit(0);
     }//GEN-LAST:event_SalirActionPerformed
 
     private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
@@ -122,6 +135,26 @@ public class Venta extends javax.swing.JFrame {
     private void Buscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Buscar1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Buscar1ActionPerformed
+
+    private void SalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SalirMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalirMouseClicked
+
+    private void TMedicamentosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TMedicamentosMouseClicked
+        //obtener la fila
+            int row = TMedicamentos.getSelectedRow();
+            //obtener la columna
+            int i = TMedicamentos.getSelectedColumn();
+            //si la columna es la 1era
+            if (i == 0) {
+                DefaultTableModel model = (DefaultTableModel) TMedicamentos.getModel();
+                String nro_registro = (String) model.getValueAt(row, i);
+                VentaFarmacia v = new VentaFarmacia();
+                v.setVisible(true);
+                this.setVisible(false);
+            }
+            
+    }//GEN-LAST:event_TMedicamentosMouseClicked
 
     /**
      * @param args the command line arguments

@@ -7,6 +7,7 @@ package Interfaces;
 
 import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -114,7 +115,8 @@ public class Almacen extends javax.swing.JFrame {
     }//GEN-LAST:event_BuscarActionPerformed
 
     private void SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalirActionPerformed
-      System.exit(0);
+      JOptionPane.showMessageDialog(null, "Cierre de sesion automatico activado", "Cerrar Aplicacion",JOptionPane.CANCEL_OPTION);
+        System.exit(0);
     }//GEN-LAST:event_SalirActionPerformed
 
     private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
