@@ -6,27 +6,52 @@
 package Interfaces;
 
 import java.net.URL;
+import java.util.Vector;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.sql.ResultSet;
 
 /**
  *
  * @author DyMGaming
  */
 public class Venta extends javax.swing.JFrame {
-
+    ResultSet rs;
     /**
      * Creates new form Almacen
      */
     public Venta() {
         initComponents();
         iconoEnBD();
+        tablaMedicamentos();
     }
     public void iconoEnBD(){      
         URL url = getClass().getResource("/Imagenes/Logo2.png"); 
         ImageIcon icono = new ImageIcon(url);  
         setIconImage(icono.getImage()); 
+    }
+    public void tablaMedicamentos() {
+        DefaultTableModel modelo = (DefaultTableModel) TMedicamentos.getModel();
+        modelo.setRowCount(0);
+        
+        rs = ConexionSQL.Conexion.Consulta("SELECT * FROM mostrarmedicamentos");
+        try {
+            while (rs.next()) {
+                Vector v = new Vector();
+                v.add(rs.getString(1));
+                v.add(rs.getInt(2));
+                v.add(rs.getInt(3));
+                v.add(rs.getString(4));
+                v.add(rs.getString(5));
+                v.add(rs.getInt(6));
+                modelo.addRow(v);
+                TMedicamentos.setModel(modelo);
+            }
+        } catch (Exception e) {
+            
+        }
+      
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,15 +77,29 @@ public class Venta extends javax.swing.JFrame {
 
         TMedicamentos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Paracetamol", "500", "150", "oral", "no", "50"},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Medicamento", "Gramos", "Enfermedad", "Via", "Receta", "Stock"
+                "Medicamento", "Gramos", "Precio", "Via", "Receta", "Stock"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         TMedicamentos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TMedicamentosMouseClicked(evt);

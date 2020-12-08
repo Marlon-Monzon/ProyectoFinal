@@ -51,7 +51,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         Welcome.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         Welcome.setForeground(new java.awt.Color(255, 255, 255));
-        Welcome.setText("Bienvenido Usuario");
+        Welcome.setText("Bienvenido");
         getContentPane().add(Welcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         Almacen.setBackground(new java.awt.Color(0, 0, 102));
