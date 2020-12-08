@@ -6,7 +6,12 @@
 package Interfaces;
 
 import java.net.URL;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import java.sql.ResultSet;
 
 /**
  *
@@ -77,6 +82,11 @@ public class Registro extends javax.swing.JFrame {
         Registrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Registrar.setForeground(new java.awt.Color(255, 255, 255));
         Registrar.setText("Registrar");
+        Registrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RegistrarMouseClicked(evt);
+            }
+        });
         Registrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegistrarActionPerformed(evt);
@@ -98,7 +108,7 @@ public class Registro extends javax.swing.JFrame {
 
         TPassword.setBackground(new java.awt.Color(0, 0, 102));
         TPassword.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(TPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 140, -1));
+        getContentPane().add(TPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 102));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -118,7 +128,7 @@ public class Registro extends javax.swing.JFrame {
 
         TConfirmarContraseña.setBackground(new java.awt.Color(0, 0, 102));
         TConfirmarContraseña.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(TConfirmarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 140, -1));
+        getContentPane().add(TConfirmarContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 140, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OIP (1).jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(400, 320));
@@ -138,6 +148,37 @@ public class Registro extends javax.swing.JFrame {
         v.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void RegistrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RegistrarMouseClicked
+        Connection con;
+        CallableStatement cs;
+        CallableStatement Id;
+        String mostrar;
+        ResultSet rs;
+        int contador=0;
+        try {
+           Class.forName("org.postgresql.Driver");
+            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Farmacia","Marlon","mpsaaj");
+             cs = con.prepareCall("select registrotrabajadores(?,?,?,?)");
+             cs.setString(1, this.TNombre.getText());
+             cs.setString(2, this.TAP.getText());
+             cs.setString(3, this.TAM.getText());
+             cs.setString(4, this.TPassword.getText());
+             //Id=con.prepareCall("select iduser()");
+             rs=ConexionSQL.Conexion.Consulta("select * from trabajadores ORDER BY idtrabajadores DESC LIMIT 1");
+             while (rs.next()) {
+              contador=rs.getInt(1)+1;
+            }
+             if (cs.execute()) {
+                JOptionPane.showMessageDialog(getParent(), "Registro Realizado Correctamente tu id de trabajador es: "+contador);
+                MenuPrincipal v = new MenuPrincipal();
+                v.setVisible(true);
+                this.setVisible(false);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+    }//GEN-LAST:event_RegistrarMouseClicked
 
     /**
      * @param args the command line arguments
