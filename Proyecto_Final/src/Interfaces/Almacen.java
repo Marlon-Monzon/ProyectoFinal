@@ -36,7 +36,7 @@ public class Almacen extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) TMedicamentos.getModel();
         modelo.setRowCount(0);
         
-        rs = ConexionSQL.Conexion.Consulta("SELECT * FROM mostrarmedicamentos");
+        rs = ConexionSQL.Conexion.Consulta("SELECT * FROM mostrarmedicamentos WHERE nombremedicina LIKE '"+JBuscar.getText()+"%'");
         try {
             while (rs.next()) {
                 Vector v = new Vector();
@@ -138,6 +138,12 @@ public class Almacen extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+
+        JBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                JBuscarKeyReleased(evt);
+            }
+        });
         getContentPane().add(JBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 170, 30));
 
         JEjemplo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -166,6 +172,10 @@ public class Almacen extends javax.swing.JFrame {
         v.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_ReturnActionPerformed
+
+    private void JBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_JBuscarKeyReleased
+        tablaMedicamentos();
+    }//GEN-LAST:event_JBuscarKeyReleased
 
     /**
      * @param args the command line arguments
