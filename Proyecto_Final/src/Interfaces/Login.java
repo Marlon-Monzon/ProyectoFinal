@@ -11,6 +11,9 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.font.TextAttribute;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.ImageIcon;
@@ -47,12 +50,12 @@ public class Login extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         Iniciar_sesion = new javax.swing.JButton();
         JUser = new javax.swing.JTextField();
-        JPassword = new javax.swing.JTextField();
         Crear = new javax.swing.JLabel();
         JTextUser = new javax.swing.JLabel();
         JTextPasword = new javax.swing.JLabel();
         Salir = new javax.swing.JButton();
         Icono = new javax.swing.JLabel();
+        jPassword = new javax.swing.JPasswordField();
         Fondo = new javax.swing.JLabel();
 
         jTextField2.setText("Usuario");
@@ -67,6 +70,11 @@ public class Login extends javax.swing.JFrame {
         Iniciar_sesion.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Iniciar_sesion.setForeground(new java.awt.Color(255, 255, 255));
         Iniciar_sesion.setText("Iniciar Sesion");
+        Iniciar_sesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Iniciar_sesionMouseClicked(evt);
+            }
+        });
         Iniciar_sesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Iniciar_sesionActionPerformed(evt);
@@ -77,10 +85,6 @@ public class Login extends javax.swing.JFrame {
         JUser.setBackground(new java.awt.Color(0, 0, 102));
         JUser.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(JUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, 110, -1));
-
-        JPassword.setBackground(new java.awt.Color(0, 0, 102));
-        JPassword.setForeground(new java.awt.Color(255, 255, 255));
-        getContentPane().add(JPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
 
         Crear.setForeground(new java.awt.Color(255, 255, 255));
         Crear.setText("Crear Cuenta");
@@ -98,8 +102,8 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(Crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 270, 80, -1));
 
         JTextUser.setForeground(new java.awt.Color(255, 255, 255));
-        JTextUser.setText("Usuario");
-        getContentPane().add(JTextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, -1, 20));
+        JTextUser.setText("ID Usuario");
+        getContentPane().add(JTextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, -1, 20));
 
         JTextPasword.setForeground(new java.awt.Color(255, 255, 255));
         JTextPasword.setText("Contraseña");
@@ -118,6 +122,10 @@ public class Login extends javax.swing.JFrame {
 
         Icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Logo2.png"))); // NOI18N
         getContentPane().add(Icono, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, -1));
+
+        jPassword.setBackground(new java.awt.Color(0, 0, 102));
+        jPassword.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 110, -1));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/OIP (1).jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 320));
@@ -152,6 +160,38 @@ public class Login extends javax.swing.JFrame {
                 attributes.put(TextAttribute.UNDERLINE, -1);
                 Crear.setFont(font.deriveFont(attributes));
     }//GEN-LAST:event_CrearMouseExited
+
+    private void Iniciar_sesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Iniciar_sesionMouseClicked
+        Connection con;
+        PreparedStatement ps;
+        ResultSet rs;
+        try {
+            int user = Integer.parseInt(JUser.getText());
+           
+        String password = jPassword.getText();
+        if (user==0 || password.equals("")) {
+            JOptionPane.showMessageDialog(getParent(), "DEBE INGRESAR LOS DATOS", "INICIO SESIÓN", JOptionPane.CLOSED_OPTION);
+        } else {
+            try {
+                con = ConexionSQL.Conexion.getConnection();
+                ps = con.prepareStatement("SELECT * FROM trabajadores WHERE idtrabajadores=? and contraseña=?");
+                ps.setInt(1, user);
+                ps.setString(2, password);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    MenuPrincipal v = new MenuPrincipal();
+                    v.setVisible(true);
+                    setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(getParent(), "DEBE REGISTRARSE", "FALLO AL INICIAR SESIÓN", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(getParent(), "DEBE REGISTRARSE", "FALLO AL INICIAR SESIÓN", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_Iniciar_sesionMouseClicked
 
     /**
      * @param args the command line arguments
@@ -193,11 +233,11 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Icono;
     private javax.swing.JButton Iniciar_sesion;
-    private javax.swing.JTextField JPassword;
     private javax.swing.JLabel JTextPasword;
     private javax.swing.JLabel JTextUser;
     private javax.swing.JTextField JUser;
     private javax.swing.JButton Salir;
+    private javax.swing.JPasswordField jPassword;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
