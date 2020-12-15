@@ -183,10 +183,10 @@ public class Login extends javax.swing.JFrame {
                     v.setVisible(true);
                     setVisible(false);
                 } else {
-                    JOptionPane.showMessageDialog(getParent(), "DEBE REGISTRARSE", "FALLO AL INICIAR SESIÓN", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(getParent(), "Contraseña o ID incorrectos", "FALLO AL INICIAR SESIÓN", JOptionPane.ERROR_MESSAGE);
                 }
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(getParent(), "DEBE REGISTRARSE", "FALLO AL INICIAR SESIÓN", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(getParent(), "Contraseña o ID incorrectos", "FALLO AL INICIAR SESIÓN", JOptionPane.ERROR_MESSAGE);
             }
         }
         } catch (Exception e) {
